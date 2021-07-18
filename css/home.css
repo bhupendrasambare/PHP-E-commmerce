@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 :root{
-    --primary:rgb(62, 177, 253);
+    --primary:#24edff;
     --ubuntu:'Ubuntu', sans-serif;
     --roboto:'Roboto', sans-serif;
 }
