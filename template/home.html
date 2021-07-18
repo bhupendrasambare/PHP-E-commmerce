@@ -11,62 +11,145 @@
     <!-- custom css -->
     <link rel="stylesheet" href="../css/home.css">
 
+    <!-- owl carosal -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>E-Commerce </title>
   </head>
   <body>
+    <!-- nav open -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse ml-auto-nav" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
           </ul>
         </div>
         </div>
+      </div>
       </nav>
+      <!-- nav cloase -->
       <!-- carosel -->
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
+          <a href="">
             <img src="../images/Banner1.png" class="d-block w-100" alt="...">
+          </a>
           </div>
           <div class="carousel-item">
-            <img src="../images/Banner2.png" class="d-block w-100" alt="...">
+            <a href="">
+              <img src="../images/Banner2.png" class="d-block w-100" alt="...">
+            </a>
           </div>
           <div class="carousel-item">
+            <a href="">
             <img src="../images/Banner1.png" class="d-block w-100" alt="...">
+          </a>
           </div>
           <div class="carousel-item">
-            <img src="../images/Banner2.png" class="d-block w-100" alt="...">
-          </div>
-          
+            <a href="">
+              <img src="../images/Banner2.png" class="d-block w-100" alt="...">
+            </a>
+          </div>  
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="carousel-control-prev-icon" hidden aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="carousel-control-next-icon" hidden aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <!-- corosol end -->
+      <!-- owl carosal -->
+      <div class="container tag-yellow">
+        <div class="box-title">
+          New Arrivals 🎉
+        </div>
+      </div>
+      <div class="container">
+        <div class="owl-carousel owl-theme">
+          <div class="item">
+            <a href="">
+            <img src="../images/products/8.png" alt="">
+            <div class="product-name">Product name</div>
+          </a>
+          </div>
+          <div class="item">
+            <a href="">
+            <img src="../images/products/6.png" alt="">
+            <div class="product-name">Product name</div>
+          </a>
+          </div>
+          <div class="item">
+            <a href="">
+            <img src="../images/products/5.png" alt="">
+            <div class="product-name">Product name</div>
+          </a>
+          </div>
+          <div class="item">
+            <a href="">
+            <img src="../images/products/4.png" alt="">
+            <div class="product-name">Product name</div>
+          </a>
+          </div>
+          <div class="item">
+            <a href="">
+            <img src="../images/products/3.png" alt="">
+            <div class="product-name">Product name</div>
+          </a>
+          </div>
+          <div class="item">
+            <a href="">
+            <img src="../images/products/2.png" alt="">
+            <div class="product-name">Product name</div>
+          </a>
+          </div>
+      </div>
+      </div>
 
 
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+  </script>
   </body>
 </html>
