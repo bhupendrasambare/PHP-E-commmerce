@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary:rgb(62, 177, 253);
+    --ubuntu:'Ubuntu', sans-serif;
+    --roboto:'Roboto', sans-serif;
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #fff;
+}
+.ml-auto-nav{
+    margin-left: auto;
+}
+.navbar-light{
+    color: #fff !important;
+}
+.bg-light{
+    background-color: var(--primary)!important;
+}
+.navbar-brand{
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--ubuntu);
+    color: #fff !important;
+}
+.nav-link{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgb(209, 209, 209);
+}
+.nav-link:hover{
+    color: aliceblue;
+}
+@media only screen and (max-width:700px) {
+    .ml-auto-nav{
+        margin-left: 0px;
+    }
+}
