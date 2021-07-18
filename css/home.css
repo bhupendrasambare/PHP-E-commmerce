@@ -32,9 +32,6 @@
 .nav-link:hover{
     color: aliceblue;
 }
-.carousel{
-    height: clac(100% - 20px);
-}
 /* new arrivals */
 .tag-yellow{
     color: #000;
@@ -44,7 +41,7 @@
     height: 120px;
 }
 .box-title{
-    width: 200px;
+    width: 230px;
     border-radius: 10px;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -63,4 +60,63 @@
     margin-left: 10px;
     margin-right: 10px;
     border-bottom: 5px solid var(--primary);
+}
+section ul{
+    display: flex;
+}
+section ul li{
+    list-style: none;
+    background: #eee;
+    padding: 8px 20px;
+    margin: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+section ul li.active{
+    background: #24edff;
+}
+.product-filter{
+    display: flex;
+    flex-wrap: wrap;
+}
+.itembox{
+    margin: 20px;
+    border-radius: 10px;
+    min-width: 230px;
+    max-width: 300px;
+    align-items:center ;
+}
+.itembox img{
+    margin-left: 20px;
+    min-width: 180px;
+    max-width: 200px;
+}
+.product-name-filter{
+    font-weight: 500;
+    text-align: center;
+}
+.blog-box{
+    margin: 20px;
+    padding: 10px;
+    color: #000;
+    width: 140px;
+    border-radius: 10px;
+    background: rgb(196, 196, 196);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.blog-main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.blog-main a{
+    margin: 20px;
+    flex: 1;
+}
+.blog-main a img{
+    border-radius: 20px;
+    width: 300px;
+}
+.footer{
+    background-image: linear-gradient(rgb(37, 37, 102),rgb(0, 14, 94));
 }
