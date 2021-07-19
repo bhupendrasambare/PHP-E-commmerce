@@ -120,3 +120,89 @@ section ul li.active{
 .footer{
     background-image: linear-gradient(rgb(37, 37, 102),rgb(0, 14, 94));
 }
+.footer-title{
+    padding-top: 20px;
+    height: 80px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.copyright{
+    text-align: center;
+    font-size: 0.9rem;
+    color: #fff;
+    height: 50px;
+}
+/* product page */
+/* product page */
+/* product page */
+.product-main-box{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.image-product{
+    flex: 1;
+}
+.image-product img{
+    margin: 20px;
+    max-width: 500px;
+}
+.image-discription{
+    margin-left: 20px;
+    flex: 1;
+}
+.company-name{
+    font-weight: 700;
+    background-color: #eee;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+.product-name-title{
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: var(--roboto);
+}
+.features{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.fa-star{
+    color: gold;
+}
+.orignal-price{
+    text-decoration: line-through;
+    font-size: 1.2rem;
+}
+.gold{
+    color: orange;
+    font-size: 30px;
+    margin: 10px 20px;
+}
+.product-icon-title{
+    width: 30px;
+    word-break: break-all;
+    margin-top: -5px;
+    font-size: 1rem;
+    color: goldenrod;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:600px) {
+    .image-product img{
+        padding: 20px;
+        max-width: 300px;
+    }
+}
