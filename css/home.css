@@ -175,6 +175,9 @@ section ul li.active{
     text-decoration: line-through;
     font-size: 1.2rem;
 }
+.icons{
+    text-align: center;
+}
 .gold{
     color: orange;
     font-size: 30px;
@@ -186,6 +189,7 @@ section ul li.active{
     margin-top: -5px;
     font-size: 1rem;
     color: goldenrod;
+    text-align: center;
 }
 
 
