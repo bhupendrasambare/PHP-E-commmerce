@@ -212,6 +212,7 @@ section ul li.active{
     cursor: pointer;
 }
 .quantity{
+    border: 5px;
     margin-left: 10px;
     margin-right: 10px;
     background-color: #dfdfdf;
