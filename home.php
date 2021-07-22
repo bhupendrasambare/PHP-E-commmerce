@@ -1,9 +1,0 @@
-<?php
-include_once('./php/header.php');
-include_once('./php/navbar.php');
-include_once('./php/carosal.php');
-include_once('./php/newarrival.php');
-include_once('./php/products.php');
-include_once('./php/special-product.php');
-include_once('./php/footer.php');
-?>
