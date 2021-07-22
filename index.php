@@ -49,89 +49,17 @@
       </nav>
       <!-- nav cloase -->
       <!-- carosel -->
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-          <a href="product.php">
-            <img src="./images/Banner1.png" class="d-block w-100" alt=".">
-          </a>
-          </div>
-          <div class="carousel-item">
-            <a href="product.php">
-              <img src="./images/Banner2.png" class="d-block w-100" alt=".">
-            </a>
-          </div>
-          <div class="carousel-item">
-            <a href="product.php">
-            <img src="./images/Banner1.png" class="d-block w-100" alt=".">
-          </a>
-          </div>
-          <div class="carousel-item">
-            <a href="product.php">
-              <img src="./images/Banner2.png" class="d-block w-100" alt=".">
-            </a>
-          </div>  
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" hidden aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" hidden aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+      
       <!-- corosol end -->
       <!-- owl carosal -->
-      <div class="container tag-yellow">
-        <div class="box-title">
-          New Arrivals &ensp;&ensp;&ensp;🎉
-        </div>
-      </div>
-      <div class="container">
-        <div class="owl-carousel owl-theme">
-          <div class="item">
-            <a href="product.php">
-            <img src="./images/products/8.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="product.php">
-            <img src="./images/products/6.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="product.php">
-            <img src="./images/products/5.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="product.php">
-            <img src="./images/products/4.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="product.php">
-            <img src="./images/products/3.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="product.php">
-            <img src="./images/products/2.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-      </div>
-      </div>
-      <!-- product filter -->
-      <div class="container tag-yellow">
+      <?php
+          include_once('./phptemplate/carosal.php');
+          echo $carosal;
+          include_once('./phptemplate/newproduct.php');
+          echo $newProduct;
+      echo '<div class="container tag-yellow">
         <div class="box-title bg-light m-2">
-          Out Products&ensp;&ensp;&ensp;&ensp; 📱
+          Our Products&ensp;&ensp;&ensp;&ensp; 📱
         </div>
       </div>
       <section class="container">
@@ -142,8 +70,7 @@
           <li class="product-list" data-filter="apple">Apple</li>
           <li class="product-list" data-filter="samsung">Samsung</li>
         </ul>
-        <div class="product-filter" id="allproduct">
-        <?php
+        <div class="product-filter" id="allproduct">';
 include_once('./php/config.php');
 
 $sql = "SELECT * FROM product ";
@@ -152,65 +79,16 @@ $sql = "SELECT * FROM product ";
     {
         echo '<a href="product.php?product='.$row['productid'].'"><div class="itembox '.$row['company'].'"><img src="./images/products/'.$row['manager'].'" alt=""><br><div class="product-name-filter">'.$row['name'].'</div></div></a>';
     }
-?>
-        
-        </div>
-      </section>
-      <!-- product filter  end-->
-      <!-- blog -->
-      <div class="container mt-5 blog">
-        <div class="blog-box">Blog&ensp;&ensp;&ensp;📜</div>
-        <div class="blog-main container">
-          <a href=""><img src="./images/blog/blog1.jpg" alt=""></a>
-          <a href=""><img src="./images/blog/blog3.jpg" alt=""></a>
-          <a href=""><img src="./images/blog/blog2.jpg" alt=""></a>
-        </div>
-      </div>
-      <div class="container tag-yellow">
-        <div class="box-title">
-          Special Product&ensp;&ensp;🎉
-        </div>
-      </div>
-      <div class="container">
-        <div class="owl-carousel owl-theme">
-          <div class="item">
-            <a href="">
-            <img src="./images/products/8.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="">
-            <img src="./images/products/6.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="">
-            <img src="./images/products/5.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="">
-            <img src="./images/products/4.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="">
-            <img src="./images/products/3.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="">
-            <img src="./images/products/2.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-      </div>
-      </div>
+    echo "</div>
+    </section>";   
+      echo "<!-- product filter  end-->
+      <!-- blog -->";
+      include('./phptemplate/blog.php');
+      echo $blog;
+      include('./phptemplate/specialPrice.php');
+      echo $specialPrice;
+
+      ?>
       <div class="footer">
         <div class=" container footer-title">
           PHP Project by Bhupendra sambare
@@ -220,8 +98,8 @@ $sql = "SELECT * FROM product ";
         </div>
       </div>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -257,6 +135,6 @@ $(document).ready(function(){
     $(this).addClass(' active').siblings().removeClass(' active');
   })
 })
-  </script>
-  </body>
+</script>
+</body>
 </html>
