@@ -21,35 +21,13 @@
     <title>E-Commerce </title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse ml-auto-nav" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Account <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i><span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="#"><i class="fas fa-user-circle"></i><span class="sr-only">(current)</span></a>
-              </li>
-            </ul>
-          </div>
-          </div>
-        </div>
-        </nav>
+ 
     <?php
+    session_start();
     include('./php/config.php');
+    include_once('./phptemplate/navbar.php');
+    echo $navbar;
     $productid = $_GET['product'];
-    // echo $productid;
     
 $sql = "SELECT * FROM `product` WHERE `productid` = $productid ";
 $result = mysqli_query($con,$sql);
@@ -82,7 +60,7 @@ $row =  mysqli_fetch_array($result);
             <i class="fas fa-undo-alt gold"><br><span class="product-icon-title">Replacable</span></i>
             <i class="fas fa-wallet gold"><br><span class="product-icon-title">COD</span></i>
         </div>
-        <form action="addtocart()">
+        <form action="php/addcart.php" method="POST">
         <div class="quantity-box">Quantity
             <span class="decrese-btn" onclick="decrese()">-</span>
             <input class="quantity" id="quantity" value="1" disabled></input>
@@ -92,8 +70,8 @@ $row =  mysqli_fetch_array($result);
         <div class="totalvalue"> Total value
         <span class="ml-5 text-warning" id="total"><?php echo $row['sale']  ?></span></div>
         <div class="button-section">
-            <button class="btn btn-warning btn-flex">Add to cart</button>
-            <button class="btn btn-success btn-flex">Buy</button>
+            <button type="submit" name="cart" class="btn btn-warning btn-flex">Add to cart</button>
+            <button type="submit" name="buy" class="btn btn-success btn-flex">Buy</button>
         </div>
     </form>
     </div>
@@ -111,128 +89,30 @@ $row =  mysqli_fetch_array($result);
       </div>
       <div class="container">
         <div class="owl-carousel owl-theme">
-          <div class="item">
-            <a href="">
-            <img src="./images/products/8.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="">
-            <img src="./images/products/6.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="">
-            <img src="./images/products/5.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="">
-            <img src="./images/products/4.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="">
-            <img src="./images/products/3.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
-          <div class="item">
-            <a href="">
-            <img src="./images/products/2.png" alt="">
-            <div class="product-name">Product name</div>
-          </a>
-          </div>
+          <?php
+              $companyname = $row['company'];
+              $sql2 = "SELECT * FROM `product` WHERE `company` = '$companyname'";
+    $result2 = mysqli_query($con,$sql2);
+    // echo mysqli_fetch_assoc($result2);
+    while($row2 = mysqli_fetch_assoc($result2))
+    {
+      echo'<div class="item">
+      <a href="product.php?product='.$row2['productid'].'">
+      <img src="./images/products/'.$row2['manager'].'" alt="">
+      <div class="product-name">'.$row2['name'].'</div>
+    </a>
+    </div>';
+    }
+          ?>
       </div>
       </div>
     </div>
     <?php
 include_once('./phptemplate/blog.php');
 echo $blog;
+include('./phptemplate/specialPrice.php');
+      echo $specialPrice;
 ?>
-    <div class="container tag-yellow">
-      <div class="box-title">
-        You searches &ensp;&ensp;&ensp;🕰
-      </div>
-    </div>
-    <div class="container">
-      <div class="owl-carousel owl-theme">
-        <div class="item">
-          <a href="">
-          <img src="./images/products/8.png" alt="">
-          <div class="product-name">Product name</div>
-        </a>
-        </div>
-        <div class="item">
-          <a href="">
-          <img src="./images/products/6.png" alt="">
-          <div class="product-name">Product name</div>
-        </a>
-        </div>
-        <div class="item">
-          <a href="">
-          <img src="./images/products/5.png" alt="">
-          <div class="product-name">Product name</div>
-        </a>
-        </div>
-        <div class="item">
-          <a href="">
-          <img src="./images/products/4.png" alt="">
-          <div class="product-name">Product name</div>
-        </a>
-        </div>
-        <div class="item">
-          <a href="">
-          <img src="./images/products/3.png" alt="">
-          <div class="product-name">Product name</div>
-        </a>
-        </div>
-        <div class="item">
-          <a href="">
-          <img src="./images/products/2.png" alt="">
-          <div class="product-name">Product name</div>
-        </a>
-        </div>
-    </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="footer">
         <div class=" container footer-title">
           PHP Project by Bhupendra sambare

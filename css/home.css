@@ -151,6 +151,7 @@ section ul li.active{
 .image-discription{
     margin-left: 20px;
     flex: 1;
+    font-family: var(--roboto);
 }
 .company-name{
     font-weight: 700;
@@ -290,7 +291,6 @@ section ul li.active{
     font-size: 1.3rem;
 
 }
-
 
 
 
