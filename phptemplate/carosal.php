@@ -2,22 +2,22 @@
 $carosal = '<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 <div class="carousel-inner">
   <div class="carousel-item active">
-  <a href="product.php">
+  <a href="">
     <img src="./images/Banner1.png" class="d-block w-100" alt=".">
   </a>
   </div>
   <div class="carousel-item">
-    <a href="product.php">
+    <a href="">
       <img src="./images/Banner2.png" class="d-block w-100" alt=".">
     </a>
   </div>
   <div class="carousel-item">
-    <a href="product.php">
+    <a href="">
     <img src="./images/Banner1.png" class="d-block w-100" alt=".">
   </a>
   </div>
   <div class="carousel-item">
-    <a href="product.php">
+    <a href="">
       <img src="./images/Banner2.png" class="d-block w-100" alt=".">
     </a>
   </div>  

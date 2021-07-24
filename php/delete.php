@@ -28,10 +28,12 @@ $row =  mysqli_fetch_array($result);
             $quantity = (int)$row2['quantity'];
             echo $row2['quantity']."<br>";
             $sql2 = "INSERT INTO `order` (`id`, `productid`, `userid`, `quantity`) VALUES (NULL, $product, '', $quantity)";
-            mysqli_query($con,$sql2);
             if(mysqli_query($con,$sql2)){
                 echo "success";
-                header("Location:../order.php");
+                $sql9 = 'DELETE FROM cart WHERE id = '.  $productid;
+                if(mysqli_query($con,$sql9)){
+                    header("Location:../order.php");
+                }
             }
 
 }
