@@ -2,52 +2,42 @@
       include "./phptemplate/header.php";
       echo $header;
       include "./phptemplate/navbar.php";
-      include "./php/config.php";
       echo $navbar;
-      $sql = "SELECT * FROM cart";
-      $result = mysqli_query($con,$sql);
       echo '<div class="cart container">
       <div class="cart-title-main mt-5 mb-5 d-flex flex-row-reverse bd-highlight">
-        Your Cart &ensp;&ensp;🛒
+        Your Orders &ensp;🛒
       </div>
       ';
-      $totalcart = "";
-    while($row = mysqli_fetch_assoc($result))
+      include "./php/config.php";
+      $sql = "SELECT * FROM `order`";
+    $result = mysqli_query($con,$sql);
+    $totalcart = "";
+    while($rows = mysqli_fetch_assoc($result))
     {
-        $sql4 = 'SELECT * FROM product WHERE productid = '.  $row['productid'];
-        if(mysqli_query($con,$sql4)){
-            $result2 = mysqli_query($con,$sql4);
-            $row2 = mysqli_fetch_assoc($result2);
-            $totalcart .=  '<div class="container cart-container">
-            <div class="cart-item-image">
-            <img src="./images/products/'.$row2['manager'].'" alt="">
-            </div>
-            <div class="quantity-box">
-            <div class="cart-product-qt-box mt-2">
-            Quantity-'.$row["quantity"].'
-            </div>
+        $sql4 = 'SELECT * FROM product WHERE productid = '.  $rows['productid'];
+          $result2 = mysqli_query($con,$sql4);
+          $row2 = mysqli_fetch_array($result2);
+        $totalcart .=  '<div class="container cart-container">
+        <div class="cart-item-image">
+          <img src="./images/products/'.$row2['manager'].'" alt="">
         </div>
         <div class="quantity-box">
-        <div class="cart-product-qt-box mt-2">
-        Total value <span class="text-success">'.$row["quantity"] * $row2["sale"].'</span>
-        </div>
+          <div class="cart-product-qt-box mt-2">
+            Quantity-'.$rows["quantity"].'
+          </div>
         </div>
         <div class="quantity-box">
-            <form action="./php/delete.php" method="POST" class="cart-product-qt-box mt-2">
-            <input type="text" name="deleteitem" hidden value="'.$row['id'].'">
-            <button name="delete" class="btn btn-danger mr-3">Delete</button>
-            <input type="text" name="deleteitem" hidden value="'.$row['id'].'">
-            <button class="btn btn-success" name="buy">Buy</button>
-            </form>
+          <div class="cart-product-qt-box mt-2">
+            Total value <span class="text-success">'.$rows["quantity"] * $row2["sale"].'</span>
+          </div>
         </div>
-        </div>';
-      }
+      </div>';
     }
     if($totalcart != "")
     {
       echo $totalcart;
     }else{
-      echo "your Cart is empty<br>";
+      echo "No order placed<br>";
     }
     echo '</div>';
     include('./phptemplate/specialPrice.php');

@@ -1,28 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-    <!-- font asesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- custom css -->
-    <link rel="stylesheet" href="./css/home.css">
-
-    <!-- owl carosal -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <title>E-Commerce </title>
-  </head>
-  <body>
- 
-    <?php
+<?php
+    include "./phptemplate/header.php";
+    echo $header;
     session_start();
     include('./php/config.php');
     include_once('./phptemplate/navbar.php');
@@ -63,13 +41,14 @@ $row =  mysqli_fetch_array($result);
         <form action="php/addcart.php" method="POST">
         <div class="quantity-box">Quantity
             <span class="decrese-btn" onclick="decrese()">-</span>
-            <input class="quantity" id="quantity" value="1" disabled></input>
+            <input class="quantity" type="text" name="quantity" id="quantity" value="1" onkeyup="checkquantitykeyup()"></input>
             <span class="increse-btn" onclick="increse()">+</span>
         </div>
         <span class="text-success">In stock</span>
         <div class="totalvalue"> Total value
         <span class="ml-5 text-warning" id="total"><?php echo $row['sale']  ?></span></div>
         <div class="button-section">
+          <input type="text" value="<?php echo  $_GET['product'] ?>" name="productid" hidden>
             <button type="submit" name="cart" class="btn btn-warning btn-flex">Add to cart</button>
             <button type="submit" name="buy" class="btn btn-success btn-flex">Buy</button>
         </div>
@@ -127,6 +106,19 @@ include('./phptemplate/specialPrice.php');
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+    function checkquantitykeyup(){
+      var d = document.getElementById('quantity').value;
+        d = parseInt(d);
+        if(d <=5){
+            var total = parseInt(document.getElementById('saleprice').innerHTML)
+            document.getElementById('total').innerHTML = total * d
+        }else{ 
+          d=5;
+          document.getElementById('quantity').value=d;
+          var total = parseInt(document.getElementById('saleprice').innerHTML)
+            document.getElementById('total').innerHTML = total * d
+        }
+    }
     function increse(){
         var d = document.getElementById('quantity').value;
         d = parseInt(d);

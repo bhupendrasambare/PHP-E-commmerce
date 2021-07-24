@@ -6,16 +6,13 @@ $navbar= '   <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse ml-auto-nav" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto mr-5">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Account <span class="sr-only">(current)</span></a>
-      </li>
+        <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> <span class="sr-only">(current)</span></a>
+      </li><h5 class="text-cart-number"></h4>
       <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> <span class="sr-only">(current)</span></a>
-      </li><h5 class="text-cart-number">0</h4>
-      <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fas fa-user-circle"></i><span class="sr-only">(current)</span></a>
-      </li>
+        <a class="nav-link" href="order.php">Orders <span class="sr-only">(current)</span></a>
+      </li><h5 class="text-cart-number"></h4>
     </ul>
   </div>
   </div>

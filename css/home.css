@@ -199,6 +199,7 @@ section ul li.active{
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 .decrese-btn{
     margin-left: 10px;
@@ -224,6 +225,7 @@ section ul li.active{
     font-weight: 700;
     border-radius: 50%;
     border-radius: 5%;
+    cursor: pointer;
 }
 .increse-btn{
     margin-left: 10px;
@@ -251,7 +253,7 @@ section ul li.active{
     margin-bottom: 10px;
 }
 .cart{
-    min-height: 80vh;
+    min-height: 10vh;
 }
 .cart-title-main{
     border-radius: 10px;
